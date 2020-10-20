@@ -29,9 +29,21 @@ app.get('/apps', (req, res) => {
   }
 
   if (sort) {
-    data = data.sort((a, b) => {
-      a[sort] - b[sort]
-    });
+    data = data.sort((a, b) =>
+      typeof a[sort] === 'string'
+        ? a[sort].toLowerCase() > b[sort].toLowerCase()
+          ? 1
+          : a[sort].toLowerCase() < b[sort].toLowerCase()
+            ? -1
+            : 0
+
+        : a[sort] < b[sort]
+          ? 1
+          : a[sort] > b[sort]
+            ? -1
+            : 0
+
+    )
   }
 
   res.json(data);
