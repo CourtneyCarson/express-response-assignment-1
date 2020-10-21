@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app"
+    "start": "node server.js",
+    "test": "mocha",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +23,11 @@
     "url": "https://github.com/howe-jm/express-response-assignment/issues"
   },
   "homepage": "https://github.com/howe-jm/express-response-assignment#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chair": "0.0.0",
+    "mocha": "^8.2.0",
+    "supertest": "^5.0.0"
+  }
 }
